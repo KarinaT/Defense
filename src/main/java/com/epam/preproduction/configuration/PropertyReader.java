@@ -52,7 +52,7 @@ public class PropertyReader {
 	}
 
 	public static String getOperaBinaryPath() {
-		return System.getProperty("operaDriverFile");
+		return props.getProperty("operaDriverFile");
 	}
 
 	public static String getChromeBinaryPath() {
