@@ -38,6 +38,7 @@ public class TestBase {
 
 	protected MainPage goToMainPage() throws Exception {
 		driver.manage().window().maximize();
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		driver.get(PropertyReader.getMainPageUrl() + "/");
 		MainPage mainPage = new MainPage(driver);
 		return mainPage;
