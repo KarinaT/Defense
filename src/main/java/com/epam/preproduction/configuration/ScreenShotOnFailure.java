@@ -38,6 +38,7 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	    } catch (IOException e) {
 	     e.printStackTrace();
 	    }
+	    Reporter.setEscapeHtml(false);
 	    Reporter.log(String.format(NAME, "screenshots/" + destFile));
 
 	   }
