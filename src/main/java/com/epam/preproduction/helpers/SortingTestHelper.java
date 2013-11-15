@@ -23,6 +23,7 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByPrices() {
+		Reporter.log("Verifying sorting items at catalogue page by prices");
 		cataloguePage.getSortLineBlock().sortByPrice();
 
 		List<Item> data = new ArrayList<Item>();
