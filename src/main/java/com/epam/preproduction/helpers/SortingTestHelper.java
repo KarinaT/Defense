@@ -8,6 +8,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import com.epam.preproduction.components.NavigationLine;
 import com.epam.preproduction.entities.BreadMaker;
@@ -23,6 +24,7 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByPrices() {
+		Reporter.log("verifySortingItemsByPrices() started");
 		cataloguePage.getSortLineBlock().sortByPrice();
 
 		List<Item> data = new ArrayList<Item>();
@@ -47,6 +49,7 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByNames() {
+		Reporter.log("verifySortingItemsByNames() started");
 		cataloguePage.getSortLineBlock().sortByName();
 		List<Item> data = new ArrayList<Item>();
 		int pageCount = 0;
@@ -66,6 +69,7 @@ public class SortingTestHelper {
 	}
 
 	public List<Item> grabItems() {
+		Reporter.log("grabItems() started");
 		List<Item> result = new ArrayList<Item>();
 		List<WebElement> items = cataloguePage.getMainBlock().getDivClassItem();
 
@@ -83,6 +87,7 @@ public class SortingTestHelper {
 			breadMaker.setPrice(price);
 			breadMaker.setDescription(description);
 			result.add(breadMaker);
+			Reporter.log("grabbed the items on the page");
 		}
 		return result;
 	}
@@ -103,7 +108,7 @@ public class SortingTestHelper {
 	}
 
 	private void next() {
-
+		Reporter.log("going to the next page");
 		WebElement element = cataloguePage.getMainBlock().getNextPage();
 		if (!CollectionUtils.isEmpty(element.findElements(By
 				.className(NavigationLine.ACTIVE_LINK)))) {
