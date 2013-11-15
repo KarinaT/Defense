@@ -24,7 +24,6 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByPrices() {
-		Reporter.log("verifySortingItemsByPrices() started");
 		cataloguePage.getSortLineBlock().sortByPrice();
 
 		List<Item> data = new ArrayList<Item>();
@@ -69,7 +68,6 @@ public class SortingTestHelper {
 	}
 
 	public List<Item> grabItems() {
-		Reporter.log("grabItems() started");
 		List<Item> result = new ArrayList<Item>();
 		List<WebElement> items = cataloguePage.getMainBlock().getDivClassItem();
 
@@ -108,7 +106,7 @@ public class SortingTestHelper {
 	}
 
 	private void next() {
-		Reporter.log("going to the next page");
+		
 		WebElement element = cataloguePage.getMainBlock().getNextPage();
 		if (!CollectionUtils.isEmpty(element.findElements(By
 				.className(NavigationLine.ACTIVE_LINK)))) {
