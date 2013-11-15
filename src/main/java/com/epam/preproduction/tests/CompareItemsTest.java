@@ -48,7 +48,6 @@ public class CompareItemsTest extends TestBase {
 			throws Exception {
 
 		goToMainPage();
-		fail();
 		mainPage.selectProductType(productType);
 		helper.checkParameters(comparePage, itemPage);
 
