@@ -107,7 +107,7 @@ public class WebDriverFactory {
 		}
 		if (browserType.equals("opera")) {
 			System.setProperty("opera.binary", PropertyReader.getOperaBinaryPath());
-			return new OperaDriver(capabilities);
+			return new OperaDriver();
 		}
 		throw new Error("Unrecognized browser type: " + browserType);
 	}
