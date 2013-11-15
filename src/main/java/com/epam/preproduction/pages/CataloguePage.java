@@ -65,6 +65,7 @@ public class CataloguePage extends Page {
 	}
 
 	public void clickFilterParameter(String searchParameter) {
+		Reporter.log("Taking parameters from excel");
 		getFilterBlock().getFunction(searchParameter);
 
 	}
