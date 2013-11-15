@@ -30,7 +30,6 @@ public class TestBase {
 		caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
 		System.out.println(System.getProperty("webdriver.browser"));
 		driver = WebDriverFactory.getDriver(caps);
-
 		// driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("===end===>setUp");
@@ -39,6 +38,7 @@ public class TestBase {
 
 	protected MainPage goToMainPage() throws Exception {
 		driver.manage().window().maximize();
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		driver.get(PropertyReader.getMainPageUrl() + "/");
 		MainPage mainPage = new MainPage(driver);
 		return mainPage;

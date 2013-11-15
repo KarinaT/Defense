@@ -24,8 +24,8 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 		WebDriver driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ssaa");
-		String destDir = "target/surefire-reports/html/screenshots";
-		//new File(destDir).mkdirs();
+		String destDir = "target/surefire-reports/html/screenshots/";
+		new File(destDir).mkdirs();
 		String destFile = dateFormat.format(new Date()) + ".png";
 
 		try {
@@ -34,6 +34,6 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 			e.printStackTrace();
 		}
 
-		Reporter.log("Saved <a href=../screenshots/" + destFile	+ ">Screenshot</a>");
+		Reporter.log("Saved <a href=screenshots/" + destFile	+ ">Screenshot</a>");
 	}
 }
