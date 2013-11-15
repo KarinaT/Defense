@@ -28,8 +28,7 @@ public class CompareItemsTestHelper {
 		return itemPage;
 	}
 
-	public void setPages(CataloguePage cataloguePage, ItemPage itemPage,
-			ComparePage comparePage) {
+	public void setPages(CataloguePage cataloguePage, ItemPage itemPage,ComparePage comparePage) {
 		CompareItemsTestHelper.cataloguePage = cataloguePage;
 		CompareItemsTestHelper.itemPage = itemPage;
 		CompareItemsTestHelper.comparePage = comparePage;
@@ -44,24 +43,18 @@ public class CompareItemsTestHelper {
 
 		Item firstItem = itemPage.grabAllCharacteristics();
 		Reporter.log("grabbing all characteristics");
-		System.out.println(firstItem.getCharacteristics());
 		cataloguePage.goBack();
 
 		cataloguePage.getCompareBlock().getSecondCompareItem().click();
 		cataloguePage.getCompareBlock().getCompareItemsLink().click();
 
 		Item secondItem = itemPage.grabAllCharacteristics();
-
-		System.out.println(secondItem.getCharacteristics());
 		cataloguePage.getCompareBlock().getCompareGoods().click();
 
 		Set<String> paramsNames = comparePage.grabAllParamNames();
 		Set<String> names1 = firstItem.getCharacteristics().keySet();
 		Set<String> names2 = secondItem.getCharacteristics().keySet();
 
-		System.out.println(paramsNames);
-		System.out.println(names1);
-		System.out.println(names2);
 		if (!paramsNames.containsAll(names1)) {
 			Assert.fail();
 		}
