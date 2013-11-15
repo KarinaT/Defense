@@ -41,7 +41,7 @@ public class CompareBlock {
 	public static final String BG_VALUE = "rgba(255, 255, 225, 1)";
 	public static final String BACKGROUND_COLOR = "background-color";
 	public static final String DIFFERENT = "different";
-	public static final String CLASS_COMPARE = "compare";
+	public static final String CLASS_COMPARE = "compare!!!!!!!";
 
 	public static final String TD_COMPARE_3 = "//td[3]";
 	public static final String TD_COMPARE_2 = "//td[2]";
