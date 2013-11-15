@@ -1,5 +1,7 @@
 package com.epam.preproduction.tests;
 
+import static org.testng.Assert.fail;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
@@ -46,6 +48,7 @@ public class CompareItemsTest extends TestBase {
 			throws Exception {
 
 		goToMainPage();
+		fail();
 		mainPage.selectProductType(productType);
 		helper.checkParameters(comparePage, itemPage);
 
