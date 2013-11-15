@@ -14,6 +14,7 @@ public class MainPage extends Page {
 	public CataloguePage selectProductType(String productType) {
 		driver.findElement(By.linkText(productType)).click();
 		Reporter.log("Clicking at product type");
+		Reporter.log("initiating catalogue page");
 		return PageFactory.initElements(driver, CataloguePage.class);
 	}
 
