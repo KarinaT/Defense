@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Suite 1]">
+  <listeners>
+    <listener class-name="com.epam.preproduction.configuration.ScreenShotOnFailure"/>
+  </listeners>
+  <test name="testNG test1(failed)" preserve-order="false">
+    <classes>
+      <class name="com.epam.preproduction.tests.CheckPriceFilterTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="configurations"/>
+          <include name="testFilterPrice" invocation-numbers="0"/>
+        </methods>
+      </class>
+      <class name="com.epam.preproduction.tests.CompareItemsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="configuration"/>
+        </methods>
+      </class>
+      <class name="com.epam.preproduction.tests.CheckItemInformation">
+        <methods>
+          <include name="setUp"/>
+          <include name="configuration"/>
+        </methods>
+      </class>
+      <class name="com.epam.preproduction.tests.SortingTest">
+        <methods>
+          <include name="configuration"/>
+          <include name="setUp"/>
+        </methods>
+      </class>
+      <class name="com.epam.preproduction.tests.CheckFilterParameters">
+        <methods>
+          <include name="setUp"/>
+          <include name="configuration"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

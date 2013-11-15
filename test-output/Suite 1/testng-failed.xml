@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite 1]">
+  <listeners>
+    <listener class-name="com.epam.preproduction.configuration.ScreenShotOnFailure"/>
+  </listeners>
+  <test name="testNG test1(failed)">
+    <classes>
+      <class name="com.epam.preproduction.tests.CompareItemsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="configuration"/>
+          <include name="testCompareItems" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.epam.preproduction.tests.CompareItemsTest -->
+    </classes>
+  </test> <!-- testNG test1(failed) -->
+</suite> <!-- Failed suite [Suite 1] -->

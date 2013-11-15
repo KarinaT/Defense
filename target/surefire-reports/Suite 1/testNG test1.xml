@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="EPUAKHAW0472" name="com.epam.preproduction.tests.CheckFilterParameters" tests="7" failures="0" timestamp="15 Nov 2013 10:19:23 GMT" time="405.459" errors="0">
+  <testcase name="testFilterByProducer" time="71.973" classname="com.epam.preproduction.tests.CheckFilterParameters"/>
+  <testcase name="testFilterParameter" time="1.228" classname="com.epam.preproduction.tests.CheckFilterParameters"/>
+  <testcase name="testItemInformation" time="39.653" classname="com.epam.preproduction.tests.CheckItemInformation"/>
+  <testcase name="testFilterPrice" time="214.278" classname="com.epam.preproduction.tests.CheckPriceFilterTest"/>
+  <testcase name="testCompareItems" time="21.203" classname="com.epam.preproduction.tests.CompareItemsTest"/>
+  <testcase name="testSortingByName" time="23.346" classname="com.epam.preproduction.tests.SortingTest"/>
+  <testcase name="testSortingByPrice" time="23.24" classname="com.epam.preproduction.tests.SortingTest"/>
+</testsuite>

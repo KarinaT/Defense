@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testNG test1"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="73,201">
+  <properties />
+  
+  
+            <testcase name="testFilterByProducer" time="71,973" classname="com.epam.preproduction.tests.CheckFilterParameters" />
+                <testcase name="testFilterParameter" time="1,228" classname="com.epam.preproduction.tests.CheckFilterParameters" />
+      
+</testsuite>

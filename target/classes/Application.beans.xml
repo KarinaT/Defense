@@ -1,0 +1,114 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	<context:component-scan base-package="org.hundsun" />
+
+	
+
+	<bean id="fileResolver" scope="singleton"
+		class="org.tinygroup.fileresolver.impl.FileResolverImpl">
+		<property name="fileProcessorList">
+			<list>
+				<ref bean="i18nFileProcessor" />
+				<ref bean="xStreamFileProcessor" />
+				<ref bean="commandFileProcessor" />
+				<ref bean="pluginFileProcessor" />
+
+				<ref bean="tinyFilterFileProcessor" />
+				<ref bean="tinyProcessorFileProcessor" />
+
+                <!-- validate -->
+                <ref bean="validateMapFileProcessor"/>
+                <ref bean="validateFileProcessor"/>
+				<!-- annotation -->
+				<ref bean="annotationFileProcessor" />
+				<ref bean="annotationClassFileProcessor" />
+
+				<!-- xmlservice -->
+				<ref bean="xmlServiceFileProcessor" />
+				<ref bean="xmlSysServiceFileProcessor" />
+
+				<!-- flow -->
+				<ref bean="flowFileProcessor" />
+				<ref bean="flowComponentProcessor" />
+
+				<!-- pageflow -->
+				<ref bean="pageFlowComponentProcessor" />
+				<ref bean="pageFlowFileProcessor" />
+
+				<!-- bu -->
+				<ref bean="businessUnitFileProcessor" />
+				<ref bean="businessUnitJarProcess" />
+
+				<ref bean="processorFileResolver" />
+				<ref bean="velocityMacroFileProcessor" />
+				<ref bean="fullContextFileFinder" />
+				<ref bean="processorFileResolver" />
+				<ref bean="uIComponentFileProcessor" />
+				
+				<!-- context2objects -->
+				<ref bean="generatorFileProcessor"/>
+				<!-- order -->
+				<ref bean="orderFileProcessor"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="application" scope="singleton"
+		class="org.tinygroup.application.impl.ApplicationDefault">
+		<property name="appConfigManager">
+			<ref bean="appConfigManager" />
+		</property>
+		<property name="fullContextFileRepository">
+			<ref bean="fullContextFileRepository" />
+		</property>
+		<property name="applicationProcessors">
+			<list>
+				<ref bean="greetingProcessor" />
+				<ref bean="printSystemPropertiesProcessor" />
+				<!-- 异常处理 -->
+				<ref bean="exceptionProcessor"/>
+				<!-- cep aop  -->
+				<ref bean="CEPCoreAopProcessor"/>
+				<ref bean="annotationProcessor" />
+				<ref bean="fileResolverProcessor" />
+				<ref bean="listenerApplicationProcessor"/>
+				<ref bean="tinyFilterProcessor" />
+				<ref bean="tinyApplicationProcessor" />
+				<ref bean="pluginMgtProcessor" />
+				<ref bean="pluginCommandProcessor" />
+				<ref bean="buProcessor" />
+				<ref bean="jcsCacheProcessor" />
+				<ref bean="cepProcessor"/>
+				<!-- <ref bean="fileMonitorProcessor" /> -->
+			</list>
+		</property>
+	</bean>
+	<bean id="cacheFactoryBean" scope="singleton" class="org.tinygroup.cache.CacheFactoryBean">
+	      <property name="cache">
+	         <ref bean="jcsCache"/>
+	      </property>
+	      <property name="region" value="testCache1">
+	      </property>
+	</bean>
+	<bean id="dictManager" name="dictManager" scope="singleton"
+		class="org.tinygroup.dict.impl.DictManagerImpl">
+		    <property name="cache">
+		        <ref bean="cacheFactoryBean"/>
+		    </property>
+			<property name="dictLoaderList">
+			      <list>
+			      <ref bean="simpleDictLoader" />
+			      </list>
+			</property>
+	</bean>
+	<!-- 
+	<bean id="jspServlet" scope="singleton"
+		class="org.apache.jasper.servlet.JspServlet">
+	</bean>
+	 -->
+</beans>

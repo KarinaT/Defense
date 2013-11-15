@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testNG test1"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="39,653">
+  <properties />
+  
+  
+            <testcase name="testItemInformation" time="39,653" classname="com.epam.preproduction.tests.CheckItemInformation" />
+      
+</testsuite>

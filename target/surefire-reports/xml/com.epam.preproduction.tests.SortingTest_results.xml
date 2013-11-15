@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testNG test1"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="46,586">
+  <properties />
+  
+  
+            <testcase name="testSortingByPrice" time="23,240" classname="com.epam.preproduction.tests.SortingTest" />
+                <testcase name="testSortingByName" time="23,346" classname="com.epam.preproduction.tests.SortingTest" />
+      
+</testsuite>

@@ -1,0 +1,5 @@
+#surefire
+#Thu Nov 14 23:09:38 EET 2013
+user.dir=C\:\\Users\\User\\Documents\\GitHub\\BuildFrameworkJenkins\\FrameworkBuild
+localRepository=C\:\\Users\\User\\.m2\\repository
+basedir=C\:\\Users\\User\\Documents\\GitHub\\BuildFrameworkJenkins\\FrameworkBuild
