@@ -1,7 +1,5 @@
 package com.epam.preproduction.helpers;
 
-import static org.testng.Assert.fail;
-
 import java.util.List;
 import java.util.Set;
 
@@ -37,9 +35,8 @@ public class CompareItemsTestHelper {
 		CompareItemsTestHelper.comparePage = comparePage;
 	}
 
-	Reporter.log("checkParameters() started");
 	public void checkParameters(ComparePage comparePage, ItemPage itemPage) {
-		
+		Reporter.log("checkParameters() started");
 		cataloguePage.getCompareBlock().getFirstCompareItem().click();
 		Reporter.log("adding the first item to compare");
 		cataloguePage.getCompareBlock().getCompareItemsLink().click();
