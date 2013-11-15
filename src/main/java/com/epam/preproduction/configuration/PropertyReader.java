@@ -13,6 +13,7 @@ public class PropertyReader {
 	private static Properties props = new Properties();
 
 	static {
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		File currentDir = new File(".");
 		try {
 			String sFilePath = currentDir.getCanonicalPath() + sDirSeparator + sFileName;

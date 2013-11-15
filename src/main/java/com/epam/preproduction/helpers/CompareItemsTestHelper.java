@@ -1,11 +1,14 @@
 package com.epam.preproduction.helpers;
 
+import static org.testng.Assert.fail;
+
 import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import com.epam.preproduction.components.CompareBlock;
 import com.epam.preproduction.entities.Item;
@@ -34,11 +37,16 @@ public class CompareItemsTestHelper {
 		CompareItemsTestHelper.comparePage = comparePage;
 	}
 
+	Reporter.log("checkParameters() started");
 	public void checkParameters(ComparePage comparePage, ItemPage itemPage) {
+		
 		cataloguePage.getCompareBlock().getFirstCompareItem().click();
+		Reporter.log("adding the first item to compare");
 		cataloguePage.getCompareBlock().getCompareItemsLink().click();
+		Reporter.log("adding the second item to compare");
 
 		Item firstItem = itemPage.grabAllCharacteristics();
+		Reporter.log("grabbing all characteristics");
 		System.out.println(firstItem.getCharacteristics());
 		cataloguePage.goBack();
 
@@ -66,6 +74,7 @@ public class CompareItemsTestHelper {
 
 		WebElement table = cataloguePage.getCompareBlock().getClassCompare();
 
+		Reporter.log("comparing items' characteristics");
 		List<WebElement> differentItems = table.findElements(By
 				.className(CompareBlock.DIFFERENT));
 		for (WebElement item : differentItems) {
