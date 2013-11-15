@@ -37,8 +37,9 @@ public class CompareItemsTestHelper {
 		CompareItemsTestHelper.comparePage = comparePage;
 	}
 
+	Reporter.log("checkParameters() started");
 	public void checkParameters(ComparePage comparePage, ItemPage itemPage) {
-		Reporter.log("checkParameters() started");
+		
 		cataloguePage.getCompareBlock().getFirstCompareItem().click();
 		Reporter.log("adding the first item to compare");
 		cataloguePage.getCompareBlock().getCompareItemsLink().click();
