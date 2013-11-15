@@ -19,21 +19,31 @@ import com.epam.preproduction.helpers.core.WebDriverFactory;
 
 public class ScreenShotOnFailure extends TestListenerAdapter {
 
-	@Override
-	public void onTestFailure(ITestResult tr) {
-		WebDriver driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ssaa");
-		String destDir = "target/surefire-reports/html/screenshots";
-		new File(destDir).mkdirs();
-		String destFile = dateFormat.format(new Date()) + ".png";
+	  private static final String NAME = "<a href=\"%s\"><img src=\"%<s\" width=200 height=150></a><br>";
+	  private static WebDriver driver;
 
-		try {
-			FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	   @Override
+	   public void onTestFailure(ITestResult tr) {
+	    File scrFile = ((TakesScreenshot) driver)
+	      .getScreenshotAs(OutputType.FILE);
+	    DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy__hh_mm_ssaa");
+	    String destDir = "target/surefire-reports/html/screenshots/";
+	    new File(destDir).mkdirs();
+	    String destFile = dateFormat.format(new Date()) + ".png";
+	    System.out.println(destFile);
+	    System.setProperty("org.uncommons.reportng.escape-output", "false");
+	    System.out.println(destDir);
+	    try {
+	     FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
+	    } catch (IOException e) {
+	     e.printStackTrace();
+	    }
+	    Reporter.log(String.format(NAME, "screenshots/" + destFile));
 
-		Reporter.log("Saved <a href=screenshots" + destFile	+ ">Screenshot</a>");
-	}
+	   }
+	   
+	   public static void setDriver(WebDriver d){
+	    driver = d;
+	   }
+	 }
 }
