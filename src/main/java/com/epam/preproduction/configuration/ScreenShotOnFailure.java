@@ -18,7 +18,6 @@ import org.testng.TestListenerAdapter;
 import com.epam.preproduction.helpers.core.WebDriverFactory;
 
 public class ScreenShotOnFailure extends TestListenerAdapter {
-
 	  private static final String NAME = "<a href=\"%s\"><img src=\"%<s\" width=200 height=150></a><br>";
 	  private static WebDriver driver;
 
@@ -38,7 +37,6 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	    } catch (IOException e) {
 	     e.printStackTrace();
 	    }
-	    Reporter.setEscapeHtml(false);
 	    Reporter.log(String.format(NAME, "screenshots/" + destFile));
 
 	   }
@@ -47,4 +45,3 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 	    driver = d;
 	   }
 	 }
-}
