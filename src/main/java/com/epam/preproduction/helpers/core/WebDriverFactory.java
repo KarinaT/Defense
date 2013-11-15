@@ -107,7 +107,7 @@ public class WebDriverFactory {
 		}
 		if (browserType.equals("opera")) {
 			System.out.println(PropertyReader.getOperaBinaryPath());
-			System.setProperty("opera.profile", PropertyReader.getOperaBinaryPath());
+			System.setProperty("opera.binary", PropertyReader.getOperaBinaryPath());
 			System.out.println(System.getProperty("opera.binary"));
 			return new OperaDriver(capabilities);
 		}
