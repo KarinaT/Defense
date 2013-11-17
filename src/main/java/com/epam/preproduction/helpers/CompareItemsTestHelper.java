@@ -35,14 +35,14 @@ public class CompareItemsTestHelper {
 	}
 
 	public void checkParameters(ComparePage comparePage, ItemPage itemPage) {
-		Reporter.log("checkParameters() started");
+		Reporter.log("Preparing to check parameters to cpmpare items <br>");
 		cataloguePage.getCompareBlock().getFirstCompareItem().click();
-		Reporter.log("adding the first item to compare");
+		Reporter.log("=> Adding the first item to compare <br>");
 		cataloguePage.getCompareBlock().getCompareItemsLink().click();
-		Reporter.log("adding the second item to compare");
+		Reporter.log("=> Adding the second item to compare <br>");
 
 		Item firstItem = itemPage.grabAllCharacteristics();
-		Reporter.log("grabbing all characteristics");
+		Reporter.log("Grabbing all characteristics");
 		cataloguePage.goBack();
 
 		cataloguePage.getCompareBlock().getSecondCompareItem().click();
@@ -56,15 +56,17 @@ public class CompareItemsTestHelper {
 		Set<String> names2 = secondItem.getCharacteristics().keySet();
 
 		if (!paramsNames.containsAll(names1)) {
+			Reporter.log("Can't find such a characteristic in the item description list <br>");
 			Assert.fail();
 		}
 		if (!paramsNames.containsAll(names2)) {
+			Reporter.log("Can't find such a characteristic in the item description list <br>");
 			Assert.fail();
 		}
 
 		WebElement table = cataloguePage.getCompareBlock().getClassCompare();
 
-		Reporter.log("comparing items' characteristics");
+		Reporter.log("Comparing items' characteristics <br>");
 		List<WebElement> differentItems = table.findElements(By
 				.className(CompareBlock.DIFFERENT));
 		for (WebElement item : differentItems) {
