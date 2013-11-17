@@ -30,14 +30,13 @@ public class SortingTestHelper {
 		int pageCount = 0;
 		while (true && pageCount++ < 3) {
 			data.addAll(grabItems());
-			Reporter.log("Grabbed the items from the current catalogue page <br>");
 			if (hasNext()) {
 				next();
 			} else {
 				break;
 			}
 		}
-
+		Reporter.log("Grabbed the items from the current catalogue page <br>");
 		int prevPrice = 0;
 		for (Item refrigirator : data) {
 			if (prevPrice > refrigirator.getPrice()) {
