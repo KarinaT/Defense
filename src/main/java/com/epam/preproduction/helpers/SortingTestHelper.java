@@ -86,8 +86,8 @@ public class SortingTestHelper {
 			breadMaker.setPrice(price);
 			breadMaker.setDescription(description);
 			result.add(breadMaker);
-			Reporter.log("Grabbed the items from the current catalogue page" + "br");
 		}
+		Reporter.log("Grabbed the items from the current catalogue page" + "br");
 		return result;
 	}
 
