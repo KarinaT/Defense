@@ -32,7 +32,6 @@ public class PriceFilterTestHelper{
 
 			allMachines.addAll(grabItems());
 
-			System.out.println("allMachines.size: " + allMachines.size());
 			if (hasNext()) {
 				next();
 			} else {
@@ -40,8 +39,6 @@ public class PriceFilterTestHelper{
 			}
 		}
 
-		System.out.println(allMachines.size());
-		System.out.println(allMachines);
 
 		pricePage.clickPriceFilters((int) maxPrice, (int) minPrice);
 
@@ -50,8 +47,6 @@ public class PriceFilterTestHelper{
 
 			allFitredMachines.addAll(grabItems());
 
-			System.out.println("allFitredMachines.size: "
-					+ allFitredMachines.size());
 			if (hasNext()) {
 				next();
 			} else {
@@ -59,13 +54,11 @@ public class PriceFilterTestHelper{
 			}
 		}
 
-		System.out.println(allFitredMachines.size());
-		System.out.println(allFitredMachines);
-
 		for (Item machine : allFitredMachines) {
 
 			if (machine.getPrice() > maxPrice || machine.getPrice() < minPrice) {
 				Assert.fail();
+				throw new SkipException("You've chosen incorrect data!");
 			}
 		}
 
