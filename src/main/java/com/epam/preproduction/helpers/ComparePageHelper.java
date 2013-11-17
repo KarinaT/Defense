@@ -18,7 +18,7 @@ public class ComparePageHelper {
 	}
 
 	public List<Item> grabAllParams() {
-		Reporter.log("Checking if items have similar characteristics" + "br");
+		Reporter.log("Checking if items have similar characteristics" + "<br>");
 		List<Item> microwaves = new ArrayList<Item>();
 		Item item1 = new Microwave();
 		Item item2 = new Microwave();
