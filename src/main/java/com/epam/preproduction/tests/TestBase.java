@@ -24,13 +24,10 @@ public class TestBase {
 	@BeforeClass
 	public void setUp() throws Exception {
 		System.out.println("==start==>setUp");
-
 		// for Jenkins ====== >
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setBrowserName(System.getProperty("webdriver.browser", "firefox"));
-		System.out.println(System.getProperty("webdriver.browser"));
 		driver = WebDriverFactory.getDriver(caps);
-		// driver = WebDriverFactory.getDriver(DesiredCapabilities.firefox());
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("===end===>setUp");
 
