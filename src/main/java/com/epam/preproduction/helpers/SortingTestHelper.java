@@ -48,7 +48,7 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByNames() {
-		Reporter.log("<br>" + Verifying if sorting items by names is corect" + "</br>");
+		Reporter.log("Verifying if sorting items by names is corect" + "<br>");
 		cataloguePage.getSortLineBlock().sortByName();
 		List<Item> data = new ArrayList<Item>();
 		int pageCount = 0;
