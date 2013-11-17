@@ -13,8 +13,8 @@ public class MainPage extends Page {
 	}
 	public CataloguePage selectProductType(String productType) {
 		driver.findElement(By.linkText(productType)).click();
-		Reporter.log("Initiating catalogue page" + "<br>");
-		Reporter.log("Clicking at product type" + productType + "<br>");
+		Reporter.log("=> Initiating catalogue page" + "<br>");
+		Reporter.log("=> Clicking at product type "  + productType + "<br>");
 		
 		return PageFactory.initElements(driver, CataloguePage.class);
 	}
