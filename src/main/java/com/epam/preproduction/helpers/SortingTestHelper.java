@@ -36,7 +36,6 @@ public class SortingTestHelper {
 				break;
 			}
 		}
-		System.out.println(data);
 
 		int prevPrice = 0;
 		for (Item refrigirator : data) {
@@ -61,7 +60,6 @@ public class SortingTestHelper {
 				break;
 			}
 		}
-		System.out.println(data);
 		List<Item> namesNew = new ArrayList<Item>(data);
 		Collections.sort(namesNew);
 		Assert.assertEquals(data, namesNew);
