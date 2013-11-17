@@ -30,7 +30,7 @@ public class SortingTestHelper {
 		int pageCount = 0;
 		while (true && pageCount++ < 3) {
 			data.addAll(grabItems());
-			Reporter.log("Grabbed the items from the current catalogue page" + "br");
+			Reporter.log("Grabbed the items from the current catalogue page <br>");
 			if (hasNext()) {
 				next();
 			} else {
@@ -56,7 +56,7 @@ public class SortingTestHelper {
 			if (hasNext()) {
 				next();
 			} else {
-				Reporter.log("No more pages at catalogue found"+ "<br>");
+				Reporter.log("No more pages at catalogue found <br>");
 				break;
 			}
 		}
