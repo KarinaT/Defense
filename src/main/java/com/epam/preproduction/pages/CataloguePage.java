@@ -3,7 +3,7 @@ package com.epam.preproduction.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-
+import org.testng.Reporter;
 import com.epam.preproduction.components.CompareBlock;
 import com.epam.preproduction.components.FiltersBlock;
 import com.epam.preproduction.components.MainBlock;
