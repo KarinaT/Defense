@@ -30,6 +30,7 @@ public class SortingTestHelper {
 		int pageCount = 0;
 		while (true && pageCount++ < 3) {
 			data.addAll(grabItems());
+			Reporter.log("Grabbed the items from the current catalogue page" + "br");
 			if (hasNext()) {
 				next();
 			} else {
@@ -47,7 +48,6 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByNames() {
-		Reporter.log("Verifying if sorting items by names is corect" + "<br>");
 		cataloguePage.getSortLineBlock().sortByName();
 		List<Item> data = new ArrayList<Item>();
 		int pageCount = 0;
@@ -85,7 +85,6 @@ public class SortingTestHelper {
 			breadMaker.setDescription(description);
 			result.add(breadMaker);
 		}
-		Reporter.log("Grabbed the items from the current catalogue page" + "br");
 		return result;
 	}
 
