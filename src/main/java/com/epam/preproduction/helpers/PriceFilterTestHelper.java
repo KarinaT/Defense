@@ -13,6 +13,7 @@ import com.epam.preproduction.entities.BreadMaker;
 import com.epam.preproduction.entities.Item;
 import com.epam.preproduction.pages.CataloguePage;
 import com.epam.preproduction.pages.PricePage;
+import org.testng.SkipException;
 
 public class PriceFilterTestHelper{
 
