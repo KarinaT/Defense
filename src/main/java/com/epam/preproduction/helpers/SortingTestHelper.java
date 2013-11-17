@@ -48,7 +48,7 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByNames() {
-		Reporter.log("verifySortingItemsByNames() started");
+		Reporter.log("<br>" + Verifying if sorting items by names is corect" + "</br>");
 		cataloguePage.getSortLineBlock().sortByName();
 		List<Item> data = new ArrayList<Item>();
 		int pageCount = 0;
@@ -57,6 +57,7 @@ public class SortingTestHelper {
 			if (hasNext()) {
 				next();
 			} else {
+				Reporter.log("No more pages at catalogue found");
 				break;
 			}
 		}
