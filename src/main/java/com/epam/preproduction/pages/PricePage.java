@@ -31,12 +31,10 @@ public class PricePage extends Page {
 	}
 
 	public FiltersBlock clickPriceFilters(int maxPrice, int minPrice) {
-		getDriver().findElement(
-				By.xpath(getFilterBlock().getMaxPrice(maxPrice))).click();
-		getDriver().findElement(
-				By.xpath(getFilterBlock().getMinPrice(minPrice))).click();
+		getDriver().findElement(By.xpath(getFilterBlock().getMaxPrice(maxPrice))).click(); 
+		Reporter.log("<b><h2>" + "Taking maxPrice = " + maxPrice + "and minPrice = " + minPrice + " parameters from excel"+"</b></h2>");
+		getDriver().findElement(By.xpath(getFilterBlock().getMinPrice(minPrice))).click();
 		refreshLocators();
-		Reporter.log("Refreshing locators");
 		return PageFactory.initElements(driver, FiltersBlock.class);
 	}
 
