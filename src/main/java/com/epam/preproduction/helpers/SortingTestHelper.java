@@ -57,7 +57,7 @@ public class SortingTestHelper {
 			if (hasNext()) {
 				next();
 			} else {
-				Reporter.log("No more pages at catalogue found");
+				Reporter.log("No more pages at catalogue found"+ "<br>");
 				break;
 			}
 		}
