@@ -64,6 +64,9 @@ public class CompareBlock {
 
 	@FindBy(xpath = TD_COMPARE_3)
 	WebElement tdCompare3;
+	
+	@FindBy(xpath = TD_COMPARE_ITEMS)
+	WebElement tdForCompare;		
 
 	@FindBy(xpath = TABLE_CLASS_DIFFERENT)
 	List<WebElement> tableClassDifferent;
@@ -72,10 +75,13 @@ public class CompareBlock {
 	List<WebElement> tableClassCompare;
 
 	@FindBy(xpath = CHARACTERISTIC_VALUE)
-	By characteristicValue;
+	List<WebElement> characteristicValueList;
+	
+	@FindBy(xpath = CHARACTERISTIC_VALUE)
+	WebElement characteristicValue;
 
 	@FindBy(xpath = CHARACTERISTIC_TYPE)
-	By characteristicType;
+	WebElement characteristicType;
 
 	@FindBy(className = CHARACTERISTIC_ROW)
 	List<WebElement> characteristicRow;
@@ -124,11 +130,15 @@ public class CompareBlock {
 	
 	// === GETTERS === //
 
-	public By getCharacteristicValue() {
+	public WebElement getCharacteristicValue() {
 		return characteristicValue;
 	}
+	
+	public List<WebElement> getCharacteristicValueList() {
+		return characteristicValueList;
+	}
 
-	public By getCharacteristicType() {
+	public WebElement getCharacteristicType() {
 		return characteristicType;
 	}
 
@@ -214,6 +224,10 @@ public class CompareBlock {
 	
 	public WebElement getHref() {
 		return href;
+	}
+
+	public WebElement getTdForCompare() {
+		return tdForCompare;
 	}
 
 }
