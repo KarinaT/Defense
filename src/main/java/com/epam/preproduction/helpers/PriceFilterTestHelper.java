@@ -104,8 +104,8 @@ public class PriceFilterTestHelper{
 				.className(NavigationLine.ACTIVE_LINK)))) {
 			return true;
 		}
-		return false;
 		Reporter.log("=> No more pages found at catalogue page <br>");
+		return false;
 	}
 
 	protected void next() {
