@@ -23,11 +23,6 @@ public class WashingMachine extends Item {
 	}
 
 	@Override
-	public String toString() {
-		return "WashingMachine [name=" + name + ", price=" + price + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
