@@ -36,6 +36,7 @@ public class PriceFilterTestHelper{
 			if (hasNext()) {
 				next();
 			} else {
+				Reporter.log("No more pages can be found at catalogue page <br>");
 				break;
 			}
 		}
@@ -69,6 +70,8 @@ public class PriceFilterTestHelper{
 					&& machine.getPrice() >= minPrice) {
 
 				Assert.assertTrue(allFitredMachines.size() == Integer.parseInt(totalFilteredItems));
+			}else{
+				Reporter.log("The number of filtered items doesn't match count of filtered items! <br>");
 			}
 		}
 	}
@@ -103,6 +106,7 @@ public class PriceFilterTestHelper{
 				.className(NavigationLine.ACTIVE_LINK)))) {
 			return true;
 		}
+		Reporter.log("No more pages found at catalogue page <br>");
 		return false;
 	}
 
