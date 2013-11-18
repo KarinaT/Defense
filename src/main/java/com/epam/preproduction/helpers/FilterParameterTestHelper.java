@@ -33,7 +33,6 @@ public class FilterParameterTestHelper {
 				break;
 			}
 		}
-		System.out.println(filteredBreadMakersList);
 
 		for (Item breadMaker : filteredBreadMakersList) {
 			if (!breadMaker.getDescription().contains(searchParameter)) {
@@ -123,7 +122,6 @@ public class FilterParameterTestHelper {
 		List<String> result = new ArrayList<String>();
 		List<WebElement> manufactures = cataloguePage.getFilterBlock()
 				.getProducerFilter();
-		System.out.println(manufactures);
 		for (WebElement manufacture : manufactures) {
 			result.add(manufacture.getText());
 		}
@@ -132,7 +130,6 @@ public class FilterParameterTestHelper {
 
 		List<WebElement> hiddenManufactures = cataloguePage.getFilterBlock()
 				.getRestProducerFilter();
-		System.out.println(hiddenManufactures);
 		for (WebElement manufacture : hiddenManufactures) {
 			result.add(manufacture.getText());
 		}
