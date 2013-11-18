@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import org.testng.Reporter;
 
 public class PropertyReader {
 
@@ -23,13 +24,13 @@ public class PropertyReader {
 
 		} catch (FileNotFoundException e) {
 
-			System.out.println("File not found!");
-
+		Reporter.log("File not found!");
+			
 			e.printStackTrace();
 
 		} catch (IOException ex) {
 
-			System.out.println("IO Error!");
+			Reporter.log("IO Error!");
 
 			ex.printStackTrace();
 
