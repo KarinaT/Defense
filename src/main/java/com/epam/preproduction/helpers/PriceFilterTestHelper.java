@@ -79,7 +79,7 @@ public class PriceFilterTestHelper{
 
 		List<WebElement> items = cataloguePage.getMainBlock().getDivClassItem();
 		for (WebElement item : items) {
-			BreadMaker breadMaker = new BreadMaker();
+			Item breadMaker = new BreadMaker();
 			String name = cataloguePage.getMainBlock().getProductNames().getText();
 			int price = extratNumbers(cataloguePage.getMainBlock().getPriceStrong().getText());
 			String description = cataloguePage.getMainBlock().getDescription().getText();
