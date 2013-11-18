@@ -23,7 +23,7 @@ public abstract class Page {
 	}
 
 	public void goBack() {
-		Reporter.log("<b><h1>" + "Navigating back - to previous page"+"</b></h1>");
+		Reporter.log("Navigating back - to previous page <br>");
 		driver.navigate().back();
 		refreshLocators();
 	}
