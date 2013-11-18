@@ -92,8 +92,7 @@ public class CheckItemInformationTestHelper {
 			urlList.add(i - 1, itemPage.getDriver().getCurrentUrl());
 			cataloguePage.goBack();
 			cataloguePage.refreshLocators();
-			Assert.assertNotEquals(catalogueLinks, pricePageLinks,
-					"Some links are shown in search results by mistake! ");
+			Assert.assertNotEquals(catalogueLinks, pricePageLinks,"Some links are shown in search results by mistake! ");
 
 		}
 
