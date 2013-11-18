@@ -19,24 +19,4 @@ public class ItemPage extends Page {
 
 	}
 
-	public Item grabAllCharacteristics() {
-		Item item = new Microwave();
-		Map<String, String> itemMap = new HashMap<String, String>();
-
-		List<WebElement> listOfCharacteristics = getDriver().findElements(
-				By.className("row"));
-		for (WebElement element : listOfCharacteristics) {
-			String charateristicName = element.findElement(By.className("pr"))
-					.getText();
-			String charateristicValue = element
-					.findElement(By.className("val")).getText();
-			itemMap.put(charateristicName, charateristicValue);
-		}
-		item.setCharacteristics(itemMap);
-		return item;
-	}
-
-	public String getCurrentLinks() {
-		return getDriver().getCurrentUrl();
-	}
 }
