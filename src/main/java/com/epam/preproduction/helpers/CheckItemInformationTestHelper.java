@@ -96,11 +96,6 @@ public class CheckItemInformationTestHelper {
 
 		}
 
-		System.out.println(namesList);
-		System.out.println(catalogueLinks);
-		System.out.println(urlList);
-		System.out.println(goToPricePage(namesList));
-
 	}
 
 	public Set<String> goToPricePage(List<String> namesList) {
