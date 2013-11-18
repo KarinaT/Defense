@@ -98,7 +98,6 @@ public class FilterParameterTestHelper {
 				break;
 			}
 		}
-		System.out.println(allBreadMakersList);
 
 		List<String> manufacturerNames = getAllManufacturesFromFilter();
 		boolean exist = false;
