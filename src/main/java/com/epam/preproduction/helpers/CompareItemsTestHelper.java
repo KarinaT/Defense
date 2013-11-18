@@ -17,7 +17,6 @@ import com.epam.preproduction.pages.ItemPage;
 
 public class CompareItemsTestHelper {
 
-	private static final String TD_COMPARE_ITEMS = ".//td[1]";
 	private static CataloguePage cataloguePage;
 	private static ItemPage itemPage;
 	private static ComparePage comparePage;
