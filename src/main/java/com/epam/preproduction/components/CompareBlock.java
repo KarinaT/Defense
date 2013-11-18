@@ -24,7 +24,7 @@ public class CompareBlock {
 	private static final String SECOND_COMPARE = "//div[@class='item'][2]/div[@class='compare-links']/span[1]";
 	private static final String COMPARE_GOODS = "//div[@class='compare-links']/span[3]/a";
 	public final String DIV_CLASS_ITEM_PART_2 = "]/div/a";
-	public final String DIV_CLASS_ITEM_PART_1 = "//div[@class='item'][";
+	public final String DIV_CLASS_ITEM_PART_1 = "//div[@class='item']";
 
 	// === LOCATORS FOR PRICE PAGE === //
 
@@ -49,6 +49,7 @@ public class CompareBlock {
 	public static final String TABLE_CLASS_DIFFERENT = "//table[@class='compare']/tbody/tr[@class='different']";
 	public static final String TABLE_CLASS_COMPARE = "//table[@class='compare']/tbody/tr[@class='']";
 	private static final String ITEMS_TO_COMPARE = "//div[@class='item']/div/a";
+	private static final String TD_COMPARE_ITEMS = ".//td[1]";
 
 	// === FIELDS USING LOCATORS === //
 
