@@ -60,9 +60,7 @@ public class CheckItemInformationTestHelper {
 		List<String> pricePageLinks = new ArrayList<String>();
 		gerUrls(data, pricesLinks);
 		goToPricePage(namesList);
-		Assert.assertEquals(catalogueLinks, pricePageLinks,
-				"Some links are shown in search results by mistake! ");
-		System.out.println();
+		Assert.assertEquals(catalogueLinks, pricePageLinks,"Some links are shown in search results by mistake! ");
 	}
 
 	public void gerUrls(List<String> catalogueLinks, List<String> pricePageLinks) {
