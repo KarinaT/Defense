@@ -60,7 +60,7 @@ public class CheckItemInformationTestHelper {
 		List<String> pricePageLinks = new ArrayList<String>();
 		gerUrls(data, pricesLinks);
 		goToPricePage(namesList);
-		Assert.assertEquals(catalogueLinks, pricePageLinks,"Some links are shown in search results by mistake! ");
+		Assert.assertEquals(catalogueLinks, pricePageLinks,"=> Some links are shown in search results by mistake! ");
 	}
 
 	public void gerUrls(List<String> catalogueLinks, List<String> pricePageLinks) {
@@ -91,9 +91,8 @@ public class CheckItemInformationTestHelper {
 					.click();
 			urlList.add(i - 1, itemPage.getDriver().getCurrentUrl());
 			cataloguePage.goBack();
-			Reporter.log("Navigating back - to previous page <br>");
 			cataloguePage.refreshLocators();
-			Assert.assertNotEquals(catalogueLinks, pricePageLinks,"Some links are shown in search results by mistake! ");
+			Assert.assertNotEquals(catalogueLinks, pricePageLinks," => Some links are shown in search results by mistake! ");
 
 		}
 
