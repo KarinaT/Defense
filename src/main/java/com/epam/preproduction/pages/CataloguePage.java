@@ -1,5 +1,5 @@
 package com.epam.preproduction.pages;
-
+import org.testng.Reporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -62,6 +62,7 @@ public class CataloguePage extends Page {
 
 	public void selectItemCategory(String categoryName) {
 		driver.findElement(By.linkText(categoryName)).click();
+		Reporter.log("=> Choosing category name "  + categoryName + "<br>");
 	}
 
 	public void clickFilterParameter(String searchParameter) {
