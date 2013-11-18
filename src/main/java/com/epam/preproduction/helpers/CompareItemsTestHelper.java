@@ -1,5 +1,6 @@
 package com.epam.preproduction.helpers;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ import com.epam.preproduction.pages.ItemPage;
 
 public class CompareItemsTestHelper {
 
+	private static final String TD_COMPARE_ITEMS = ".//td[1]";
 	private static CataloguePage cataloguePage;
 	private static ItemPage itemPage;
 	private static ComparePage comparePage;
@@ -28,45 +30,50 @@ public class CompareItemsTestHelper {
 		return itemPage;
 	}
 
-	public void setPages(CataloguePage cataloguePage, ItemPage itemPage,ComparePage comparePage) {
+	public void setPages(CataloguePage cataloguePage, ItemPage itemPage,
+			ComparePage comparePage) {
 		CompareItemsTestHelper.cataloguePage = cataloguePage;
 		CompareItemsTestHelper.itemPage = itemPage;
 		CompareItemsTestHelper.comparePage = comparePage;
 	}
 
 	public void checkParameters(ComparePage comparePage, ItemPage itemPage) {
-		Reporter.log("Preparing to check parameters to cpmpare items <br>");
+		Reporter.log("checkParameters() started");
 		cataloguePage.getCompareBlock().getFirstCompareItem().click();
-		Reporter.log("=> Adding the first item to compare <br>");
+		Reporter.log("adding the first item to compare");
 		cataloguePage.getCompareBlock().getCompareItemsLink().click();
-		Reporter.log("=> Adding the second item to compare <br>");
+		Reporter.log("adding the second item to compare");
 
 		Item firstItem = itemPage.grabAllCharacteristics();
-		Reporter.log("Grabbing all characteristics");
+		Reporter.log("grabbing all characteristics");
+		System.out.println(firstItem.getCharacteristics());
 		cataloguePage.goBack();
 
 		cataloguePage.getCompareBlock().getSecondCompareItem().click();
 		cataloguePage.getCompareBlock().getCompareItemsLink().click();
 
 		Item secondItem = itemPage.grabAllCharacteristics();
+
+		System.out.println(secondItem.getCharacteristics());
 		cataloguePage.getCompareBlock().getCompareGoods().click();
 
-		Set<String> paramsNames = comparePage.grabAllParamNames();
+		Set<String> paramsNames = grabAllParamNames();
 		Set<String> names1 = firstItem.getCharacteristics().keySet();
 		Set<String> names2 = secondItem.getCharacteristics().keySet();
 
+		System.out.println(paramsNames);
+		System.out.println(names1);
+		System.out.println(names2);
 		if (!paramsNames.containsAll(names1)) {
-			Reporter.log("Can't find such a characteristic in the item description list <br>");
 			Assert.fail();
 		}
 		if (!paramsNames.containsAll(names2)) {
-			Reporter.log("Can't find such a characteristic in the item description list <br>");
 			Assert.fail();
 		}
 
 		WebElement table = cataloguePage.getCompareBlock().getClassCompare();
 
-		Reporter.log("Comparing items' characteristics <br>");
+		Reporter.log("comparing items' characteristics");
 		List<WebElement> differentItems = table.findElements(By
 				.className(CompareBlock.DIFFERENT));
 		for (WebElement item : differentItems) {
@@ -80,6 +87,24 @@ public class CompareItemsTestHelper {
 			}
 
 		}
+	}
+
+	public Set<String> grabAllParamNames() {
+		Set<String> characteristicsNames = new HashSet<String>();
+
+	//	List<WebElement> comparePageCharacteristics = getDriver().findElements(By.xpath("//table[@class='compare']/tbody/tr[@class='']"));
+		List<WebElement> comparePageCharacteristics = cataloguePage.getCompareBlock().getTableClassCompare();
+		for (WebElement element : comparePageCharacteristics) {
+			String characteristicName = element.findElement(By.xpath(TD_COMPARE_ITEMS)).getText();
+			characteristicsNames.add(characteristicName);
+		}
+		//comparePageCharacteristics = getDriver().findElements(By.xpath("//table[@class='compare']/tbody/tr[@class='different']"));
+		comparePageCharacteristics = cataloguePage.getCompareBlock().getTableClassDifferent();
+		for (WebElement element : comparePageCharacteristics) {
+			String characteristicName = element.findElement(By.xpath(TD_COMPARE_ITEMS)).getText();
+			characteristicsNames.add(characteristicName);
+		}
+		return characteristicsNames;
 	}
 
 }
