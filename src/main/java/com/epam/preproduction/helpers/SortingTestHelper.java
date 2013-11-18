@@ -47,6 +47,7 @@ public class SortingTestHelper {
 	}
 
 	public void verifySortingItemsByNames() {
+		Reporter.log("verifySortingItemsByNames() started");
 		cataloguePage.getSortLineBlock().sortByName();
 		List<Item> data = new ArrayList<Item>();
 		int pageCount = 0;
@@ -83,6 +84,7 @@ public class SortingTestHelper {
 			breadMaker.setPrice(price);
 			breadMaker.setDescription(description);
 			result.add(breadMaker);
+			Reporter.log("grabbed the items on the page");
 		}
 		return result;
 	}
