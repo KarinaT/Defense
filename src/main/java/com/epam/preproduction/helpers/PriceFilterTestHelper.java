@@ -39,8 +39,6 @@ public class PriceFilterTestHelper{
 				break;
 			}
 		}
-
-
 		pricePage.clickPriceFilters((int) maxPrice, (int) minPrice);
 
 		List<Item> allFitredMachines = new ArrayList<Item>();
@@ -65,7 +63,6 @@ public class PriceFilterTestHelper{
 
 		String totalFilteredItems = cataloguePage.getFilterBlock()
 				.getFilteredItemsCount().getText();
-		System.out.println(totalFilteredItems);
 
 		for (Item machine : allMachines) {
 			if (machine.getPrice() <= maxPrice
@@ -81,7 +78,6 @@ public class PriceFilterTestHelper{
 		List<Item> result = new ArrayList<Item>();
 
 		List<WebElement> items = cataloguePage.getMainBlock().getDivClassItem();
-		System.out.println(items);
 		for (WebElement item : items) {
 			BreadMaker breadMaker = new BreadMaker();
 			String name = cataloguePage.getMainBlock().getProductNames().getText();
@@ -113,8 +109,7 @@ public class PriceFilterTestHelper{
 	protected void next() {
 
 		WebElement element = cataloguePage.getMainBlock().getNextPage();
-		if (!CollectionUtils.isEmpty(element.findElements(By
-				.className(NavigationLine.ACTIVE_LINK)))) {
+		if (!CollectionUtils.isEmpty(element.findElements(By.className(NavigationLine.ACTIVE_LINK)))) {
 			element.findElement(By.className(NavigationLine.ACTIVE_LINK)).click();
 		}
 	}
