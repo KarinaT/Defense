@@ -34,6 +34,6 @@ public class ScreenShotOnFailure extends TestListenerAdapter {
 			e.printStackTrace();
 		}
 
-		Reporter.log("Saved <a href=screenshots/" + destFile	+ ">Screenshot</a>");
+		Reporter.log("Saved <a href=screenshots" + destFile + ">Screenshot</a>");
 	}
 }
