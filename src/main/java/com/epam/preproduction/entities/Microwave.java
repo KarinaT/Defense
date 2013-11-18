@@ -18,9 +18,4 @@ public class Microwave extends Item {
 		this.characteristics = characteristics;
 	}
 
-	@Override
-	public String toString() {
-		return "Microwave [characteristics=" + characteristics + "]";
-	}
-
 }
