@@ -91,6 +91,7 @@ public class CheckItemInformationTestHelper {
 					.click();
 			urlList.add(i - 1, itemPage.getDriver().getCurrentUrl());
 			cataloguePage.goBack();
+			Reporter.log("Navigating back - to previous page <br>");
 			cataloguePage.refreshLocators();
 			Assert.assertNotEquals(catalogueLinks, pricePageLinks,"Some links are shown in search results by mistake! ");
 
